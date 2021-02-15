@@ -19,7 +19,6 @@ class memeAPI(APIView):
         if memeId is not None:
             try:
                 meme = memeData.objects.get(id=memeId)
-                print(meme)
                 serializer = memeDataSerializer(meme)
                 return Response(serializer.data)
             except memeData.DoesNotExist:
